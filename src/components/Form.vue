@@ -11,7 +11,12 @@ export default {
     <form @submit.prevent="submitForm">
       <div class="form-field">
         <label for="userId" class="form-label">User ID:</label>
-        <input type="text" id="userId" class="form-input" v-model="formData.userId" />
+        <input
+          type="text"
+          id="userId"
+          class="form-input"
+          v-model="formData.userId"
+        />
       </div>
       <div class="form-field">
         <label for="slNo" class="form-label">Sl No:</label>
@@ -19,7 +24,12 @@ export default {
       </div>
       <div class="form-field">
         <label for="title" class="form-label">Title:</label>
-        <input type="text" id="title" class="form-input" v-model="formData.title" />
+        <input
+          type="text"
+          id="title"
+          class="form-input"
+          v-model="formData.title"
+        />
       </div>
       <div class="form-field">
         <label for="completed" class="form-label">Completed:</label>
@@ -31,7 +41,7 @@ export default {
       <div class="form-field button-group">
         <button
           type="submit"
-          @click="$emit('handleSubmit',formData?.id)"
+          @click="$emit('handleSubmit', formData?.id)"
           class="form-button submit"
         >
           Submit

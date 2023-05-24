@@ -10,7 +10,7 @@ export default {
   <Transition name="modal">
     <div v-if="show" class="modal-mask">
       <div class="modal-container">
-        <slot  @close="$emit('close')"></slot>
+        <slot @close="$emit('close')"></slot>
       </div>
     </div>
   </Transition>

@@ -4,12 +4,7 @@ export default {
     todos: Array,
     showModal: Boolean,
   },
-  data() {
-    return {
-      isEdit: false,
-      todoId: null,
-    };
-  },
+
   methods: {
     handleEdit(index) {
       this.$emit("openModal", index);
