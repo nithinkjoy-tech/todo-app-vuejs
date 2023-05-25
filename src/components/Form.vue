@@ -1,5 +1,9 @@
 <script>
+import InputField from "./InputField.vue";
 export default {
+  components: {
+    InputField,
+  },
   props: {
     formData: Object,
   },
@@ -9,28 +13,24 @@ export default {
 <template>
   <div class="form-container">
     <form @submit.prevent="submitForm">
-      <div class="form-field">
-        <label for="userId" class="form-label">User ID:</label>
-        <input
-          type="text"
-          id="userId"
-          class="form-input"
-          v-model="formData.userId"
-        />
-      </div>
-      <div class="form-field">
-        <label for="slNo" class="form-label">Sl No:</label>
-        <input type="text" id="slNo" class="form-input" v-model="formData.id" />
-      </div>
-      <div class="form-field">
-        <label for="title" class="form-label">Title:</label>
-        <input
-          type="text"
-          id="title"
-          class="form-input"
-          v-model="formData.title"
-        />
-      </div>
+      <InputField
+        id="userId"
+        label="User ID:"
+        :value="formData.userId"
+        @update:setNewValue="newValue => (formData.userId = newValue)"
+      />
+      <InputField
+        id="slNo"
+        label="Sl No:"
+        :value="formData.id"
+        @update:setNewValue="newValue => (formData.id = newValue)"
+      />
+      <InputField
+        id="title"
+        label="Title:"
+        :value="formData.title"
+        @update:setNewValue="newValue => (formData.title = newValue)"
+      />
       <div class="form-field">
         <label for="completed" class="form-label">Completed:</label>
         <select id="completed" class="form-input" v-model="formData.completed">

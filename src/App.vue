@@ -25,7 +25,7 @@ export default {
       mode: "",
     };
   },
-  async mounted() {
+  async beforeMount() {
     let data = await apiClient.get();
     this.todos = data;
   },
@@ -49,7 +49,7 @@ export default {
 
     editDataHelper(index) {
       this.showModal = true;
-      this.formData = this.todos[index];
+      this.formData = JSON.parse(JSON.stringify(this.todos[index]));
     },
 
     async addTodo() {
